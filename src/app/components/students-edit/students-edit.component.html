@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<body>
+  <h4>Update students details</h4>
+  <form [formGroup]="editStudentForm" (submit)="updateStudent()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input formControlName="name" class="form-control" id="name" />
+      <small *ngIf="editStudentForm.controls['name'].touched && editStudentForm.controls['name'].hasError('required')"
+        class="form-text text-danger">Required
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="marks">Marks</label>
+      <input formControlName="marks" class="form-control" id="marks" />
+      <small *ngIf="editStudentForm.controls['marks'].touched && editStudentForm.controls['marks'].hasError('required')"
+        class="form-text text-danger">Required
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="studId">Student Id</label>
+      <input formControlName="studId" class="form-control" id="studId" />
+      <small *ngIf="editStudentForm.controls['studId'].touched && editStudentForm.controls['studId'].hasError('required')"
+        class="form-text text-danger">Required
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!editStudentForm.valid">Submit</button>
+  </form>
+</body>
+
+</html>
+

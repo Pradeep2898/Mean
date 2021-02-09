@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<body>
+  <ul class="list-group" *ngFor="let student of Student; let i = index">
+    <li class="list-group-item border border-dark m-3">{{student.name}}
+      <hr>{{student.marks}}%
+      <hr>ID: {{student.studId}} <br>
+      <div class="text-right">
+        <button type="button" class="btn btn-success btn-sm m-2" [routerLink]="['/edit-student/', student.studId]">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="removeStudent(student.studId,i)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>
